@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e4d48e6c-ac4d-402d-82a2-2e534a2edfda" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1bRetlbiHaT1zKY0fwd5xbSqQ1P" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.22572179" />
+  </component>
+  <component name="RunManager">
+    <configuration name="All in Projekt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Projekt" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in Projekt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e4d48e6c-ac4d-402d-82a2-2e534a2edfda" name="Default Changelist" comment="" />
+      <created>1588599549614</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588599549614</updated>
+      <workItem from="1588599551057" duration="31000" />
+      <workItem from="1588599598583" duration="366000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1921" height="292" key="GridCell.Tab.0.bottom" timestamp="1588599673128">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1921" height="292" key="GridCell.Tab.0.bottom/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588599673128" />
+    <state width="1921" height="292" key="GridCell.Tab.0.center" timestamp="1588599673128">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1921" height="292" key="GridCell.Tab.0.center/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588599673128" />
+    <state width="1921" height="292" key="GridCell.Tab.0.left" timestamp="1588599673128">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1921" height="292" key="GridCell.Tab.0.left/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588599673128" />
+    <state width="1921" height="292" key="GridCell.Tab.0.right" timestamp="1588599673128">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1921" height="292" key="GridCell.Tab.0.right/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588599673128" />
+    <state x="440" y="99" key="SettingsEditor" timestamp="1588599671125">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="440" y="99" key="SettingsEditor/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588599671125" />
+    <state x="607" y="224" width="672" height="678" key="search.everywhere.popup" timestamp="1588599609807">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="607" y="224" width="672" height="678" key="search.everywhere.popup/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588599609807" />
+  </component>
+</project>

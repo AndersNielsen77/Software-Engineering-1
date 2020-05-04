@@ -40,6 +40,7 @@ public class LoginScreen {
             public void actionPerformed(ActionEvent e) {
                 String EmployeeID = id.getText();
                 if(program.getEmployee(EmployeeID) != null) {
+                    employee = program.getEmployee(EmployeeID);
                     MainScreen mainscreen = new MainScreen(program, employee);
                     jframe.setVisible(false);
                 }
@@ -60,9 +61,14 @@ public class LoginScreen {
         btnemployee.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String EmployeeID = initials.getText();
-                employee = new Employee(EmployeeID);
-                program.addEmployee(employee);
-                initials.setText("");
+                if(EmployeeID.length() == 4){
+                    employee = new Employee(EmployeeID);
+                    program.addEmployee(employee);
+                    initials.setText("");
+                }
+                else {
+                    btnemployee.setText("Must be 4 letters");
+                }
         }
         });
 

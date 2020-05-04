@@ -2,6 +2,7 @@ package gui;
 
 import Project.Employee;
 import Project.Program;
+import Project.TimeRegister;
 
 import javax.swing.*;
 import java.awt.*;
@@ -56,7 +57,7 @@ public class MainScreen{
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 String[] stringButtons = {"Current Year", "Insert name of project"};
-                Popup popup = new Popup(stringButtons, "Create Project", program, infoOutput);
+                Popup popup = new Popup(stringButtons, "Create Project", program, infoOutput, employee);
             }
         });
 
@@ -66,9 +67,9 @@ public class MainScreen{
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 String[] stringButtons = {"Name of Project", "Initials of Employee"};
-                Popup popup = new Popup(stringButtons, "Set Project Leader", program, infoOutput);
-                btnCreateActivity.setEnabled(true);
-                btnCreateReport.setEnabled(true);
+                btnCreateActivity.setEnabled(false);
+                btnCreateReport.setEnabled(false);
+                Popup popup = new Popup(stringButtons, "Set Project Leader", program, infoOutput, employee);
             }
         });
 
@@ -78,7 +79,7 @@ public class MainScreen{
             public void actionPerformed(ActionEvent e) {
                 String[] stringButtons = {"Initials of Employee", "Project name", "Time to finish activity", "Starting date for activity",
                 "end date for activity", "Name of activity"};
-                Popup popup = new Popup(stringButtons, "Create an activity", program, infoOutput);
+                Popup popup = new Popup(stringButtons, "Create an activity", program, infoOutput, employee);
 
             }
         });
@@ -86,7 +87,7 @@ public class MainScreen{
         btnCreateReport.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String[] stringButtons = {"Project name"};
-                Popup popup = new Popup(stringButtons,"Create Report",program,infoOutput);
+                Popup popup = new Popup(stringButtons,"Create Report",program,infoOutput, employee);
             }
         });
 
@@ -114,44 +115,51 @@ public class MainScreen{
         btnAddTimeToActivity = new JButton("Add Time To Activity");
         btnAddTimeToActivity.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String[] stringButtons = {"Initials of Employee", "Project name", "Name of activity", "Time to add"};
-                Popup popup = new Popup(stringButtons, "Add time to Activity", program, infoOutput);
+                String[] stringButtons = {"Project name", "Name of activity", "Time to add"};
+                Popup popup = new Popup(stringButtons, "Add time to Activity", program, infoOutput, employee);
             }
         });
         btnEditActivity = new JButton("Edit Activity");
         btnEditActivity.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String[] stringButtons = {"Initials of Employee", "Project name", "Name of activity", "Updated time"};
-                Popup popup = new Popup(stringButtons, "Edit time spent on Activity", program, infoOutput);
+                String[] stringButtons = {"Project name", "Name of activity", "Updated time"};
+                Popup popup = new Popup(stringButtons, "Edit time spent on Activity", program, infoOutput, employee);
             }
         });
         btnCreateUnavaliableActivity = new JButton("Create Unavaliable Activity");
         btnCreateUnavaliableActivity.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String[] stringButtons = {"Initials of Employee", "Name of activity", "Starting date for activity",
+                String[] stringButtons = {"Name of activity", "Starting date for activity",
                         "end date for activity"};
-                Popup popup = new Popup(stringButtons, "Edit time spent on Activity", program, infoOutput);
+                Popup popup = new Popup(stringButtons, "Create Unavailable Activity", program, infoOutput, employee);
             }
         });
         btnJoinActivity = new JButton("Join Activity");
         btnJoinActivity.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String[] stringButtons = {"Initials of Employee", "Project name", "Name of activity"};
-                Popup popup = new Popup(stringButtons, "Join Activity", program, infoOutput);
-            }
-        });
-        btnTotalHoursWorked = new JButton("Total Hours Worked");
-        btnTotalHoursWorked.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-
-
+                Popup popup = new Popup(stringButtons, "Join Activity", program, infoOutput, employee);
             }
         });
         btnGetInfo = new JButton("Get Info");
         btnGetInfo.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String[] stringButtons = {"Employee"};
-                Popup popup = new Popup(stringButtons,"Get Info",program,infoOutput);
+
+                 JFrame reportFrame = new JFrame(employee.getInitials()+" Info");
+                JTextArea reportArea = new JTextArea();
+                JPanel contentcenter = new JPanel();
+                contentcenter.add(reportArea);
+                reportFrame.setSize(600, 600);
+                reportFrame.getContentPane().add(contentcenter, BorderLayout.CENTER);
+                reportFrame.setVisible(true);
+
+                reportArea.append("Employee: "+program.getEmployee(employee).getInitials()+"\n");
+                reportArea.append("hours on Activities;"+"\n");
+                for (TimeRegister timer : program.getEmployee(employee).getTimeregisteredList()){
+                    reportArea.append(timer.getActivity().getName()+": "+timer.getTime()+"Hours"+"\n");
+                }
+                reportArea.append("Total time worked: "+program.getEmployee(employee).getTotalTime()+"Hours");
+
             }
         });
 
@@ -159,7 +167,6 @@ public class MainScreen{
         contenteast.add(btnEditActivity);
         contenteast.add(btnCreateUnavaliableActivity);
         contenteast.add(btnJoinActivity);
-        contenteast.add(btnTotalHoursWorked);
         contenteast.add(btnGetInfo);
 
         if(!program.getEmployee(employee).getIsProjectLeader()) {

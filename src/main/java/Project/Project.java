@@ -52,10 +52,6 @@ public class Project {
         return number;
     }
 
-    public List<Activity> getActivityList() {
-        return activityList;
-    }
-
     public String getReportCreated() {
         return reportCreated;
     }

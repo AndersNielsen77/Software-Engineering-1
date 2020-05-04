@@ -9,7 +9,7 @@ public class Activity {
     private int startDate;
     private int endDate;
     private String name;
-    double timeRegistered;
+    private double timeRegistered;
     List<Employee> employeeList = new ArrayList<>();
 
     public Activity(double time, int startDate, int endDate, String name) {
@@ -20,16 +20,15 @@ public class Activity {
     }
 
     public void registerTime(double timeUsed){
-        timeRegistered = timeRegistered+timeUsed;
+        this.timeRegistered = this.timeRegistered+timeUsed;
     }
 
     public void addEmployee(Employee employee) throws Exception {
-        if(employee.isAvailable(startDate,endDate)) {
+        if (employee.isAvailable(startDate, endDate) && getEmployee(employee.getInitials()) == null) {
             employeeList.add(employee);
             employee.addToActivities(this);
-        }
-        else {
-        throw new Exception("The employee is not availiable in that timeframe");
+        } else {
+            throw new Exception("The employee is not availiable in that timeframe");
         }
     }
 
@@ -57,15 +56,6 @@ public class Activity {
         return employeeList;
     }
 
-    public Employee getEmployee(Employee employee) {
-        for (Employee employee1 : employeeList){
-            if (employee1.equals(employee)){
-                return employee;
-            }
-        }
-        return null;
-    }
-
     public Employee getEmployee(String initials) {
         for (Employee employee1 : employeeList){
             if (employee1.getInitials().equals(initials)){
@@ -74,5 +64,4 @@ public class Activity {
         }
         return null;
     }
-
 }

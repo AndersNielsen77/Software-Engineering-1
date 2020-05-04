@@ -13,10 +13,6 @@ public class Program {
 
     }
 
-    public void addProject(Project project) {
-        projects.add(project);
-    }
-
     public void addProject(int year, String name) {
         runingNumber +=1;
         Project project = new Project(year,name,runingNumber);
@@ -27,8 +23,8 @@ public class Program {
         return projects.stream().anyMatch(m -> m.getName().contentEquals(name));
     }
 
-    public boolean hasProjectLeader() {
-        return !(projects.get(0).getProjectLeader() == null);
+    public boolean hasProjectLeader(String projectName) {
+        return !(getProject(projectName).getProjectLeader() == null);
     }
 
     public void addEmployee(Employee employee) {
@@ -64,15 +60,6 @@ public class Program {
         for (Project project1 : projects) {
             if (project1.getName().equals(name)) {
                 return project1;
-            }
-        }
-        return null;
-    }
-
-    public Project getProject(int number){
-        for (Project project1 : projects) {
-            if (project1.getNumber() == number) {
-                    return project1;
             }
         }
         return null;

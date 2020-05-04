@@ -20,9 +20,9 @@ public class Employee {
     }
 
     public boolean isAvailable(int startWeek, int endWeek){
-        if (unavailableList.size() > 0) {
-            for (UnavailableActivity isAvailable : unavailableList) {
-                if (isAvailable.getStartDate() > endWeek || isAvailable.getEndDate() < startWeek) {
+        if (unavailableList.size() > 0) { // 1
+            for (UnavailableActivity isAvailable1 : unavailableList) { // 2
+                if (isAvailable1.getStartDate() > endWeek || isAvailable1.getEndDate() < startWeek) { // 3
                     return true;
                 }
             }
@@ -44,7 +44,7 @@ public class Employee {
 
     public void addToActivities(Activity activity2){
         TimeRegister newTimeRegister  = new TimeRegister(activity2,0);
-        this.timeregistered.add(newTimeRegister);
+        timeregistered.add(newTimeRegister);
     }
 
     public void editTimeOnActivity(Activity activity, double time){
@@ -77,7 +77,7 @@ public class Employee {
 
     public double getTotalTime() {
         double total = 0;
-        for (TimeRegister activity1 : timeregistered){
+        for (TimeRegister activity1 : this.getTimeregisteredList()){
             total += activity1.getTime();
         }
         return total;

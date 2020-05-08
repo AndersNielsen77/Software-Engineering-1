@@ -25,7 +25,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/out" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.22572179" />
@@ -108,6 +108,8 @@
       <workItem from="1588693084126" duration="3556000" />
       <workItem from="1588707598251" duration="830000" />
       <workItem from="1588944177258" duration="2002000" />
+      <workItem from="1588957028101" duration="1337000" />
+      <workItem from="1588958390016" duration="1326000" />
     </task>
     <servers />
   </component>
@@ -143,10 +145,14 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="440" y="99" key="SettingsEditor/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588944541130" />
-    <state x="607" y="224" width="672" height="678" key="search.everywhere.popup" timestamp="1588944529450">
+    <state x="1096" y="251" key="run.anything.popup" timestamp="1588962874437">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="607" y="224" width="672" height="678" key="search.everywhere.popup/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588944529450" />
+    <state x="1096" y="251" key="run.anything.popup/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588962874437" />
+    <state x="607" y="224" width="672" height="678" key="search.everywhere.popup" timestamp="1588970402205">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="607" y="224" width="672" height="678" key="search.everywhere.popup/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588970402205" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Projekt$All_in_Projekt.ic" NAME="All in Projekt Coverage Results" MODIFIED="1588695871557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

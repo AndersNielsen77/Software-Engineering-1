@@ -2,13 +2,10 @@ Feature: Choose project leader
   Description: An employee is chosen as a project leader
   Actor: Employee
 
-
   Background: A set of projects
     Given a project with year 2020, name "Fisk"
     Then the project with year 2020, name "Fisk", number 1 is created
     And an employee with initials "ABCD"
-
-
 
   # Main scenario
   Scenario: Choose project leader

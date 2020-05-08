@@ -1,3 +1,4 @@
+// Mikkel Rahbek s194298
 package library_tests;
 
 import Project.Employee;
@@ -13,13 +14,11 @@ import static org.junit.Assert.*;
 public class TimeSteps {
 
     private Program program;
-    private ErrorMessage errorMessage;
-    private Employee employee = null;
 
-    public TimeSteps(Program program, ErrorMessage errorMessage) {
+    public TimeSteps(Program program) {
         this.program = program;
-        this.errorMessage = errorMessage;
     }
+
     @When("the employee with initials {string} records timespent {double} on an activity with name {string} in project {string}")
     public void theEmployeeRecordsTimespentOnAnActivity(String initials, double time, String activityName, String projectName) {
         program.getEmployee(initials).addTimeToActivity(program.getProject(projectName).getActivity(activityName),time);

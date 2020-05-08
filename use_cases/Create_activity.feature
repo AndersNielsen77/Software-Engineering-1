@@ -13,8 +13,6 @@ Feature: Create activities
     When An employee with initials "JJKG" creates a fixed activity with name "Ferie", startweek 18 and endweek 20
     And An employee with initials "DGGF" creates a fixed activity with name "Ferie", startweek 10 and endweek 12
 
-
-
   # Main scenario
   Scenario: Project leader create an activity
     Given an employee with initials "ABCD" who is a project leader

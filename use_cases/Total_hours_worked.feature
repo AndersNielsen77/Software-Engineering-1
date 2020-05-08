@@ -12,15 +12,8 @@ Feature: Total hours worked
     Given an employee with initials "ADAG" is attached to the activity with name "Projekt" on project "Fisk"
     Given an employee with initials "ADAG" is attached to the activity with name "Projekt2" on project "Fisk"
 
-
   # Main scenario
   Scenario: Get total number of hours
     Given the employee with initials "ADAG" records timespent 7.5 on an activity with name "Projekt" in project "Fisk"
     And the employee with initials "ADAG" records timespent 5.5 on an activity with name "Projekt" in project "Fisk"
     Then the employee with initials "ADAG" has worked for a total of 13.0 hours that day
-
-  # alternative scenario
- # Scenario: The employee has not worked / no hours
- #   When An employee requests the number of hours per day
-  #  And The employee has no registered hours for the day
-  #  Then The system gives an error message that the format is incorrect

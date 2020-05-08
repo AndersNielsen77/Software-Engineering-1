@@ -1,13 +1,159 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:use_cases/Fasteaktiviteter.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:use_cases/Addekstra_employee.feature");
 formatter.feature({
-  "name": "Fixed activities",
-  "description": "  Description: An employee records vacation/illness etc. in the system (as a fixed activity)\n  Actor: Employee",
+  "name": "Assign another employee to an activity",
+  "description": "  Description: An employee assign themselves to an activity\n  Actor: Employee",
   "keyword": "Feature"
 });
 formatter.background({
   "name": "",
   "description": "",
   "keyword": "Background"
+});
+formatter.step({
+  "name": "a project with year 2020, name \"Fisk\"",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.a_project_with_year_name_number(int,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "an employee with initials \"ABCD\"",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.an_employee_with_initials(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the employee with initials \"ABCD\" is chosen as Project leader for project \"Fisk\"",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.the_employee_is_chosen_as_Projectleader(java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "that project leader with initials \"ABCD\" creates an activity for project \"Fisk\" with time 10.5, startweek 19, endweek 21 and name \"Projekt\"",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "library_tests.ActivitySteps.that_project_leader_creates_an_activity_with_time_startdate_and_enddate(java.lang.String,java.lang.String,double,int,int,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "an employee with initials \"ADAG\"",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.an_employee_with_initials(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "an employee with initials \"GAFG\"",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.an_employee_with_initials(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "an employee with initials \"ADAG\" is attached to the activity with name \"Projekt\" on project \"Fisk\"",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "library_tests.ActivitySteps.an_employee_with_initials_is_attached_to_the_activity(java.lang.String,java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the employee with initials \"ADAG\" records timespent 5.5 on an activity with name \"Projekt\" in project \"Fisk\"",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "library_tests.TimeSteps.theEmployeeRecordsTimespentOnAnActivity(java.lang.String,double,java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "An employee assign themselves to an activity to help out another employee",
+  "description": "",
+  "keyword": "Scenario"
+});
+formatter.step({
+  "name": "an employee with initials \"GAFG\" is attached to the activity with name \"Projekt\" on project \"Fisk\"",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "library_tests.ActivitySteps.an_employee_with_initials_is_attached_to_the_activity(java.lang.String,java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the employee with initials \"GAFG\" records timespent 7.5 on an activity with name \"Projekt\" in project \"Fisk\"",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "library_tests.TimeSteps.theEmployeeRecordsTimespentOnAnActivity(java.lang.String,double,java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the total timespent 13.0 is noted on the activity \"Projekt\" in project \"Fisk\"",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "library_tests.TimeSteps.theTotalTimespentIsNotedOnTheActivity(double,java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.uri("file:use_cases/Choose_projectleader.feature");
+formatter.feature({
+  "name": "Choose project leader",
+  "description": "  Description: An employee is chosen as a project leader\n  Actor: Employee",
+  "keyword": "Feature"
+});
+formatter.background({
+  "name": "A set of projects",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.step({
+  "name": "a project with year 2020, name \"Fisk\"",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.a_project_with_year_name_number(int,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the project with year 2020, name \"Fisk\", number 1 is created",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.theProjectWithYearNameNumberIsCreated(int,java.lang.String,int)"
+});
+formatter.result({
+  "status": "passed"
 });
 formatter.step({
   "name": "an employee with initials \"ABCD\"",
@@ -20,31 +166,121 @@ formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "An employee registers a fixed activity",
+  "name": "Choose project leader",
   "description": "",
   "keyword": "Scenario"
 });
 formatter.step({
-  "name": "An employee with initials \"ABCD\" creates a fixed activity with name \"Ferie\", startweek 10 and endweek 12",
+  "name": "there is a project \"Fisk\" without a project leader",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "library_tests.FixedActivitiesSteps.anEmployeeWithInitialsCreatesAFixedActivityWithNameStartdateAndEnddate(java.lang.String,java.lang.String,int,int)"
+  "location": "library_tests.ProjectSteps.there_is_a_project_without_a_project_leader(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "the fixed activty with name \"Ferie\" is created attached to employee with initials \"ABCD\"",
-  "keyword": "Then "
+  "name": "the employee with initials \"ABCD\" is chosen as Project leader for project \"Fisk\"",
+  "keyword": "When "
 });
 formatter.match({
-  "location": "library_tests.FixedActivitiesSteps.theFixedActivtyWithNameIsCreatedAttachedToEmployeeWithInitials(java.lang.String,java.lang.String)"
+  "location": "library_tests.ProjectSteps.the_employee_is_chosen_as_Projectleader(java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
-formatter.uri("file:use_cases/Opretteaktiviter.feature");
+formatter.step({
+  "name": "the employee is Project leader",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.the_employee_with_initials_is_Projectleader()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.background({
+  "name": "A set of projects",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.step({
+  "name": "a project with year 2020, name \"Fisk\"",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.a_project_with_year_name_number(int,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the project with year 2020, name \"Fisk\", number 1 is created",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.theProjectWithYearNameNumberIsCreated(int,java.lang.String,int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "an employee with initials \"ABCD\"",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.an_employee_with_initials(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "The project has a project leader",
+  "description": "",
+  "keyword": "Scenario"
+});
+formatter.step({
+  "name": "there is a project \"Fisk\" without a project leader",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.there_is_a_project_without_a_project_leader(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "an employee with initials \"ABCD\" who is chosen as project leader for project \"Fisk\"",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.anEmployeeWithInitialsWhoIsChosennAsProjectLeader(java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "another employee with initials \"DFGH\" is chosen as project leader for project \"Fisk\"",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.anotherEmployeeWithInitialsIsChosenAsProjectLeaderForTheSameProject(java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the error message \"There is already an existing project leader\" is given",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.theErrorMessageIsGiven(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.uri("file:use_cases/Create_activity.feature");
 formatter.feature({
   "name": "Create activities",
   "description": "  Description: The Project manager creates activities for a specific project\n  Actor: Project manager",
@@ -460,16 +696,16 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
-formatter.uri("file:use_cases/Rapportoverprojekt.feature");
+formatter.uri("file:use_cases/Create_project.feature");
 formatter.feature({
-  "name": "Records hours",
-  "description": "  Description: An employee records a number of hours spent on a given activity.actor: Employee\n  Actor: Employee",
+  "name": "Create project",
+  "description": "  Description: User creates a project\n  Actor: User",
   "keyword": "Feature"
 });
-formatter.background({
-  "name": "A set of projects",
+formatter.scenario({
+  "name": "Create project",
   "description": "",
-  "keyword": "Background"
+  "keyword": "Scenario"
 });
 formatter.step({
   "name": "a project with year 2020, name \"Fisk\"",
@@ -477,46 +713,6 @@ formatter.step({
 });
 formatter.match({
   "location": "library_tests.ProjectSteps.a_project_with_year_name_number(int,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "an employee with initials \"ABCD\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.an_employee_with_initials(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "an employee with initials \"ADAG\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.an_employee_with_initials(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the employee with initials \"ABCD\" is chosen as Project leader for project \"Fisk\"",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.the_employee_is_chosen_as_Projectleader(java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "that project leader with initials \"ABCD\" creates an activity for project \"Fisk\" with time 10.5, startweek 19, endweek 21 and name \"Projekt\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "library_tests.ActivitySteps.that_project_leader_creates_an_activity_with_time_startdate_and_enddate(java.lang.String,java.lang.String,double,int,int,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -531,178 +727,7 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
-formatter.scenario({
-  "name": "Employee records hours",
-  "description": "",
-  "keyword": "Scenario"
-});
-formatter.step({
-  "name": "an employee with initials \"ADAG\"",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.an_employee_with_initials(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "an employee with initials \"ADAG\" is attached to the activity with name \"Projekt\" on project \"Fisk\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "library_tests.ActivitySteps.an_employee_with_initials_is_attached_to_the_activity(java.lang.String,java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the employee with initials \"ADAG\" records timespent 5.5 on an activity with name \"Projekt\" in project \"Fisk\"",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "library_tests.TimeSteps.theEmployeeRecordsTimespentOnAnActivity(java.lang.String,double,java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the timespent 5.5 for employee with initials \"ADAG\" is noted on the activity with name \"Projekt\" in project \"Fisk\"",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "library_tests.TimeSteps.theTimespentIsNotedOnTheActivity(double,java.lang.String,java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.uri("file:use_cases/Registrertimer.feature");
-formatter.feature({
-  "name": "Records hours",
-  "description": "  Description: An employee records a number of hours spent on a given activity.actor: Employee\n  Actor: Employee",
-  "keyword": "Feature"
-});
-formatter.background({
-  "name": "A set of projects",
-  "description": "",
-  "keyword": "Background"
-});
-formatter.step({
-  "name": "a project with year 2020, name \"Fisk\"",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.a_project_with_year_name_number(int,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "an employee with initials \"ABCD\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.an_employee_with_initials(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "an employee with initials \"ADAG\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.an_employee_with_initials(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the employee with initials \"ABCD\" is chosen as Project leader for project \"Fisk\"",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.the_employee_is_chosen_as_Projectleader(java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "a project with year 2020, name \"fisk\"",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.a_project_with_year_name_number(int,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "that project leader with initials \"ABCD\" creates an activity for project \"Fisk\" with time 10.5, startweek 19, endweek 21 and name \"Projekt\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "library_tests.ActivitySteps.that_project_leader_creates_an_activity_with_time_startdate_and_enddate(java.lang.String,java.lang.String,double,int,int,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the project with year 2020, name \"Fisk\", number 1 is created",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.theProjectWithYearNameNumberIsCreated(int,java.lang.String,int)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "Employee records hours",
-  "description": "",
-  "keyword": "Scenario"
-});
-formatter.step({
-  "name": "an employee with initials \"ADAG\"",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.an_employee_with_initials(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "an employee with initials \"ADAG\" is attached to the activity with name \"Projekt\" on project \"Fisk\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "library_tests.ActivitySteps.an_employee_with_initials_is_attached_to_the_activity(java.lang.String,java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the employee with initials \"ADAG\" records timespent 5.5 on an activity with name \"Projekt\" in project \"Fisk\"",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "library_tests.TimeSteps.theEmployeeRecordsTimespentOnAnActivity(java.lang.String,double,java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the timespent 5.5 for employee with initials \"ADAG\" is noted on the activity with name \"Projekt\" in project \"Fisk\"",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "library_tests.TimeSteps.theTimespentIsNotedOnTheActivity(double,java.lang.String,java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.uri("file:use_cases/Retteiregistreretdata.feature");
+formatter.uri("file:use_cases/Edit_registered_hours.feature");
 formatter.feature({
   "name": "Correct recorded data",
   "description": "  Description: An employee can see his total hours worked for the day\n  Actor: Employee",
@@ -828,7 +853,295 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
-formatter.uri("file:use_cases/Totaltantaltimerarbejdet.feature");
+formatter.uri("file:use_cases/Fixed_activity.feature");
+formatter.feature({
+  "name": "Fixed activities",
+  "description": "  Description: An employee records vacation/illness etc. in the system (as a fixed activity)\n  Actor: Employee",
+  "keyword": "Feature"
+});
+formatter.background({
+  "name": "",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.step({
+  "name": "an employee with initials \"ABCD\"",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.an_employee_with_initials(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "An employee registers a fixed activity",
+  "description": "",
+  "keyword": "Scenario"
+});
+formatter.step({
+  "name": "An employee with initials \"ABCD\" creates a fixed activity with name \"Ferie\", startweek 10 and endweek 12",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "library_tests.FixedActivitiesSteps.anEmployeeWithInitialsCreatesAFixedActivityWithNameStartdateAndEnddate(java.lang.String,java.lang.String,int,int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the fixed activty with name \"Ferie\" is created attached to employee with initials \"ABCD\"",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "library_tests.FixedActivitiesSteps.theFixedActivtyWithNameIsCreatedAttachedToEmployeeWithInitials(java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.uri("file:use_cases/Register_hours.feature");
+formatter.feature({
+  "name": "Records hours",
+  "description": "  Description: An employee records a number of hours spent on a given activity.actor: Employee\n  Actor: Employee",
+  "keyword": "Feature"
+});
+formatter.background({
+  "name": "A set of projects",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.step({
+  "name": "a project with year 2020, name \"Fisk\"",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.a_project_with_year_name_number(int,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "an employee with initials \"ABCD\"",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.an_employee_with_initials(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "an employee with initials \"ADAG\"",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.an_employee_with_initials(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the employee with initials \"ABCD\" is chosen as Project leader for project \"Fisk\"",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.the_employee_is_chosen_as_Projectleader(java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "a project with year 2020, name \"fisk\"",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.a_project_with_year_name_number(int,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "that project leader with initials \"ABCD\" creates an activity for project \"Fisk\" with time 10.5, startweek 19, endweek 21 and name \"Projekt\"",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "library_tests.ActivitySteps.that_project_leader_creates_an_activity_with_time_startdate_and_enddate(java.lang.String,java.lang.String,double,int,int,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the project with year 2020, name \"Fisk\", number 1 is created",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.theProjectWithYearNameNumberIsCreated(int,java.lang.String,int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Employee records hours",
+  "description": "",
+  "keyword": "Scenario"
+});
+formatter.step({
+  "name": "an employee with initials \"ADAG\"",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.an_employee_with_initials(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "an employee with initials \"ADAG\" is attached to the activity with name \"Projekt\" on project \"Fisk\"",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "library_tests.ActivitySteps.an_employee_with_initials_is_attached_to_the_activity(java.lang.String,java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the employee with initials \"ADAG\" records timespent 5.5 on an activity with name \"Projekt\" in project \"Fisk\"",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "library_tests.TimeSteps.theEmployeeRecordsTimespentOnAnActivity(java.lang.String,double,java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the timespent 5.5 for employee with initials \"ADAG\" is noted on the activity with name \"Projekt\" in project \"Fisk\"",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "library_tests.TimeSteps.theTimespentIsNotedOnTheActivity(double,java.lang.String,java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.uri("file:use_cases/Report_on_project.feature");
+formatter.feature({
+  "name": "Records hours",
+  "description": "  Description: An employee records a number of hours spent on a given activity.actor: Employee\n  Actor: Employee",
+  "keyword": "Feature"
+});
+formatter.background({
+  "name": "A set of projects",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.step({
+  "name": "a project with year 2020, name \"Fisk\"",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.a_project_with_year_name_number(int,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "an employee with initials \"ABCD\"",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.an_employee_with_initials(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "an employee with initials \"ADAG\"",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.an_employee_with_initials(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the employee with initials \"ABCD\" is chosen as Project leader for project \"Fisk\"",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.the_employee_is_chosen_as_Projectleader(java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "that project leader with initials \"ABCD\" creates an activity for project \"Fisk\" with time 10.5, startweek 19, endweek 21 and name \"Projekt\"",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "library_tests.ActivitySteps.that_project_leader_creates_an_activity_with_time_startdate_and_enddate(java.lang.String,java.lang.String,double,int,int,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the project with year 2020, name \"Fisk\", number 1 is created",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.theProjectWithYearNameNumberIsCreated(int,java.lang.String,int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Employee records hours",
+  "description": "",
+  "keyword": "Scenario"
+});
+formatter.step({
+  "name": "an employee with initials \"ADAG\"",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "library_tests.ProjectSteps.an_employee_with_initials(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "an employee with initials \"ADAG\" is attached to the activity with name \"Projekt\" on project \"Fisk\"",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "library_tests.ActivitySteps.an_employee_with_initials_is_attached_to_the_activity(java.lang.String,java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the employee with initials \"ADAG\" records timespent 5.5 on an activity with name \"Projekt\" in project \"Fisk\"",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "library_tests.TimeSteps.theEmployeeRecordsTimespentOnAnActivity(java.lang.String,double,java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the timespent 5.5 for employee with initials \"ADAG\" is noted on the activity with name \"Projekt\" in project \"Fisk\"",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "library_tests.TimeSteps.theTimespentIsNotedOnTheActivity(double,java.lang.String,java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.uri("file:use_cases/Total_hours_worked.feature");
 formatter.feature({
   "name": "Total hours worked",
   "description": "  Description: An employee can see his total hours worked for the day\n  Actor: Employee",
@@ -950,327 +1263,6 @@ formatter.step({
 });
 formatter.match({
   "location": "library_tests.TimeSteps.theEmployeeWithInitialsHasWorkedForATotalOfHoursThatDay(java.lang.String,double)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.uri("file:use_cases/addekstra_employee.feature");
-formatter.feature({
-  "name": "Assign another employee to an activity",
-  "description": "  Description: An employee assign themselves to an activity\n  Actor: Employee",
-  "keyword": "Feature"
-});
-formatter.background({
-  "name": "",
-  "description": "",
-  "keyword": "Background"
-});
-formatter.step({
-  "name": "a project with year 2020, name \"Fisk\"",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.a_project_with_year_name_number(int,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "an employee with initials \"ABCD\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.an_employee_with_initials(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the employee with initials \"ABCD\" is chosen as Project leader for project \"Fisk\"",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.the_employee_is_chosen_as_Projectleader(java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the project \"Fisk\" with year 2020 is created",
-  "keyword": "When "
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.step({
-  "name": "that project leader with initials \"ABCD\" creates an activity for project \"Fisk\" with time 10.5, startweek 19, endweek 21 and name \"Projekt\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "library_tests.ActivitySteps.that_project_leader_creates_an_activity_with_time_startdate_and_enddate(java.lang.String,java.lang.String,double,int,int,java.lang.String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "an employee with initials \"ADAG\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.an_employee_with_initials(java.lang.String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "an employee with initials \"GAFG\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.an_employee_with_initials(java.lang.String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "an employee with initials \"ADAG\" is attached to the activity with name \"Projekt\" on project \"Fisk\"",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "library_tests.ActivitySteps.an_employee_with_initials_is_attached_to_the_activity(java.lang.String,java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "the employee with initials \"ADAG\" records timespent 5.5 on an activity with name \"Projekt\" in project \"Fisk\"",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "library_tests.TimeSteps.theEmployeeRecordsTimespentOnAnActivity(java.lang.String,double,java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.scenario({
-  "name": "An employee assign themselves to an activity to help out another employee",
-  "description": "",
-  "keyword": "Scenario"
-});
-formatter.step({
-  "name": "an employee with initials \"GAFG\" is attached to the activity with name \"Projekt\" on project \"Fisk\"",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "library_tests.ActivitySteps.an_employee_with_initials_is_attached_to_the_activity(java.lang.String,java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "the employee with initials \"GAFG\" records timespent 7.5 on an activity with name \"Projekt\" in project \"Fisk\"",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "library_tests.TimeSteps.theEmployeeRecordsTimespentOnAnActivity(java.lang.String,double,java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "the total timespent 13.0 is noted on the activity \"Projekt\" in project \"Fisk\"",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "library_tests.TimeSteps.theTotalTimespentIsNotedOnTheActivity(double,java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.uri("file:use_cases/choose_projectleader.feature");
-formatter.feature({
-  "name": "Choose project leader",
-  "description": "  Description: An employee is chosen as a project leader\n  Actor: Employee",
-  "keyword": "Feature"
-});
-formatter.background({
-  "name": "A set of projects",
-  "description": "",
-  "keyword": "Background"
-});
-formatter.step({
-  "name": "a project with year 2020, name \"Fisk\"",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.a_project_with_year_name_number(int,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the project with year 2020, name \"Fisk\", number 1 is created",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.theProjectWithYearNameNumberIsCreated(int,java.lang.String,int)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "an employee with initials \"ABCD\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.an_employee_with_initials(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "Choose project leader",
-  "description": "",
-  "keyword": "Scenario"
-});
-formatter.step({
-  "name": "there is a project \"Fisk\" without a project leader",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.there_is_a_project_without_a_project_leader(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the employee with initials \"ABCD\" is chosen as Project leader for project \"Fisk\"",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.the_employee_is_chosen_as_Projectleader(java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the employee is Project leader",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.the_employee_with_initials_is_Projectleader()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.background({
-  "name": "A set of projects",
-  "description": "",
-  "keyword": "Background"
-});
-formatter.step({
-  "name": "a project with year 2020, name \"Fisk\"",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.a_project_with_year_name_number(int,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the project with year 2020, name \"Fisk\", number 1 is created",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.theProjectWithYearNameNumberIsCreated(int,java.lang.String,int)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "an employee with initials \"ABCD\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.an_employee_with_initials(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "The project has a project leader",
-  "description": "",
-  "keyword": "Scenario"
-});
-formatter.step({
-  "name": "there is a project \"Fisk\" without a project leader",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.there_is_a_project_without_a_project_leader(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "an employee with initials \"ABCD\" who is chosen as project leader for project \"Fisk\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.anEmployeeWithInitialsWhoIsChosennAsProjectLeader(java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "another employee with initials \"DFGH\" is chosen as project leader for project \"Fisk\"",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.anotherEmployeeWithInitialsIsChosenAsProjectLeaderForTheSameProject(java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the error message \"There is already an existing project leader\" is given",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.theErrorMessageIsGiven(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.uri("file:use_cases/create_project.feature");
-formatter.feature({
-  "name": "Create project",
-  "description": "  Description: User creates a project\n  Actor: User",
-  "keyword": "Feature"
-});
-formatter.scenario({
-  "name": "Create project",
-  "description": "",
-  "keyword": "Scenario"
-});
-formatter.step({
-  "name": "a project with year 2020, name \"Fisk\"",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.a_project_with_year_name_number(int,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the project with year 2020, name \"Fisk\", number 1 is created",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "library_tests.ProjectSteps.theProjectWithYearNameNumberIsCreated(int,java.lang.String,int)"
 });
 formatter.result({
   "status": "passed"

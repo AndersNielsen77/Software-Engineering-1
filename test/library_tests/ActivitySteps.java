@@ -1,3 +1,4 @@
+// Anders Nielsen s194299
 package library_tests;
 
 import Project.Employee;
@@ -6,8 +7,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import java.util.ArrayList;
-import java.util.List;
 import static org.junit.Assert.*;
 
 public class ActivitySteps {

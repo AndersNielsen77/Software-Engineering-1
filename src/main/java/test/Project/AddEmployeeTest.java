@@ -1,4 +1,5 @@
-package test.Project; 
+// Mikkel Rahbek s194298
+package test.Project;
 
 import Project.Activity;
 import Project.Employee;

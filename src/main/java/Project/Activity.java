@@ -24,11 +24,13 @@ public class Activity {
     }
 
     public void addEmployee(Employee employee) throws Exception {
-        if (employee.isAvailable(startDate, endDate) && getEmployee(employee.getInitials()) == null) {
-            employeeList.add(employee);
-            employee.addToActivities(this);
-        } else {
-            throw new Exception("The employee is not availiable in that timeframe");
+        assert true: employee != null;
+        if (getEmployee(employee.getInitials())== null) {     //1
+            if (employee.isAvailable(startDate, endDate)) {   // 2
+                employeeList.add(employee);
+                employee.addToActivities(this);
+                assert true : employee.getInitials() != null;
+            } else {throw new Exception("The employee is not available in that timeframe");}
         }
     }
 

@@ -1,0 +1,178 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Employee</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">Project</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Employee (Project)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Employee</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (14/ 14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    98%
+  </span>
+  <span class="absValue">
+    (50/ 51)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package Project;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.util.ArrayList;
+<i>4</i>&nbsp;import java.util.List;
+<i>5</i>&nbsp;
+<b class="fc"><i>6</i>&nbsp;public class Employee {</b>
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;    private String initials;
+<b class="fc"><i>9</i>&nbsp;    private ProjectLeader projectLeader = null;</b>
+<b class="fc"><i>10</i>&nbsp;    private List&lt;TimeRegister&gt; timeregistered = new ArrayList&lt;&gt;();</b>
+<b class="fc"><i>11</i>&nbsp;    private List&lt;UnavailableActivity&gt; unavailableList = new ArrayList&lt;&gt;();</b>
+<i>12</i>&nbsp;
+<b class="fc"><i>13</i>&nbsp;    public Employee(String initials) {</b>
+<b class="fc"><i>14</i>&nbsp;        this.initials = initials;</b>
+<b class="fc"><i>15</i>&nbsp;    }</b>
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;    public void createUnavailablety(String name, int startWeek, int endWeek){
+<b class="fc"><i>18</i>&nbsp;        UnavailableActivity activity = new UnavailableActivity(name, startWeek, endWeek);</b>
+<b class="fc"><i>19</i>&nbsp;        unavailableList.add(activity);</b>
+<b class="fc"><i>20</i>&nbsp;    }</b>
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;    public boolean isAvailable(int startWeek, int endWeek){
+<b class="fc"><i>23</i>&nbsp;        assert startWeek &gt; 0 &amp;&amp; startWeek &lt;= 53  &amp;&amp; endWeek &gt; 0 &amp;&amp; endWeek &lt;= 53: &quot;Precondition&quot;;</b>
+<b class="fc"><i>24</i>&nbsp;        if (unavailableList.size() &gt; 0) { // 1</b>
+<b class="fc"><i>25</i>&nbsp;            for (UnavailableActivity isAvailable1 : unavailableList) { // 2</b>
+<b class="fc"><i>26</i>&nbsp;                if ((isAvailable1.getStartDate() &gt; endWeek || isAvailable1.getEndDate() &lt; startWeek) &amp;&amp; startWeek &lt;= endWeek) {  // 3</b>
+<b class="fc"><i>27</i>&nbsp;                    return true;</b>
+<b class="fc"><i>28</i>&nbsp;                }else if ((isAvailable1.getStartDate() &gt; endWeek &amp;&amp; isAvailable1.getEndDate() &lt; startWeek) &amp;&amp; startWeek &gt; endWeek){ //4</b>
+<b class="fc"><i>29</i>&nbsp;                    return true;</b>
+<i>30</i>&nbsp;                }
+<b class="fc"><i>31</i>&nbsp;            }</b>
+<b class="fc"><i>32</i>&nbsp;            return false;</b>
+<b class="fc"><i>33</i>&nbsp;        }else return true;</b>
+<i>34</i>&nbsp;    }
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;    public List&lt;UnavailableActivity&gt; getUnavailableList() {
+<b class="fc"><i>37</i>&nbsp;        return unavailableList;</b>
+<i>38</i>&nbsp;    }
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;    public void setProjectLeader(ProjectLeader projectLeader) {
+<b class="fc"><i>41</i>&nbsp;    this.projectLeader = projectLeader;</b>
+<b class="fc"><i>42</i>&nbsp;    }</b>
+<i>43</i>&nbsp;
+<i>44</i>&nbsp;    public Boolean getIsProjectLeader() {
+<b class="fc"><i>45</i>&nbsp;    return !(projectLeader == null);</b>
+<i>46</i>&nbsp;    }
+<i>47</i>&nbsp;
+<i>48</i>&nbsp;    public void addToActivities(Activity activity2){
+<b class="fc"><i>49</i>&nbsp;        TimeRegister newTimeRegister  = new TimeRegister(activity2,0);</b>
+<b class="fc"><i>50</i>&nbsp;        timeregistered.add(newTimeRegister);</b>
+<b class="fc"><i>51</i>&nbsp;    }</b>
+<i>52</i>&nbsp;
+<i>53</i>&nbsp;    public void editTimeOnActivity(Activity activity, double time){
+<b class="fc"><i>54</i>&nbsp;        for (TimeRegister activity1 : timeregistered){</b>
+<b class="fc"><i>55</i>&nbsp;            if (activity1.getActivity().equals(activity)){</b>
+<b class="fc"><i>56</i>&nbsp;                activity.registerTime(-activity1.getTime());</b>
+<b class="fc"><i>57</i>&nbsp;                activity1.setTime(time);</b>
+<b class="fc"><i>58</i>&nbsp;                activity.registerTime(activity1.getTime());</b>
+<i>59</i>&nbsp;            }
+<b class="fc"><i>60</i>&nbsp;        }</b>
+<b class="fc"><i>61</i>&nbsp;    }</b>
+<i>62</i>&nbsp;
+<i>63</i>&nbsp;    public void addTimeToActivity(Activity activity, double time){
+<b class="fc"><i>64</i>&nbsp;        for (TimeRegister activity1 : timeregistered){</b>
+<b class="fc"><i>65</i>&nbsp;            if (activity1.getActivity().equals(activity)){</b>
+<b class="fc"><i>66</i>&nbsp;                activity1.addTime(time);</b>
+<b class="fc"><i>67</i>&nbsp;                activity.registerTime(time);</b>
+<i>68</i>&nbsp;            }
+<b class="fc"><i>69</i>&nbsp;        }</b>
+<b class="fc"><i>70</i>&nbsp;    }</b>
+<i>71</i>&nbsp;
+<i>72</i>&nbsp;    public double getTimeRegister(Activity activity) {
+<b class="fc"><i>73</i>&nbsp;        for (TimeRegister activity1 : timeregistered){</b>
+<b class="fc"><i>74</i>&nbsp;            if (activity1.getActivity().equals(activity)){</b>
+<b class="fc"><i>75</i>&nbsp;                return activity1.getTime();</b>
+<i>76</i>&nbsp;            }
+<b class="nc"><i>77</i>&nbsp;        } return -1;</b>
+<i>78</i>&nbsp;    }
+<i>79</i>&nbsp;
+<i>80</i>&nbsp;    public double getTotalTime() {
+<b class="fc"><i>81</i>&nbsp;        double total = 0;</b>
+<b class="fc"><i>82</i>&nbsp;        for (TimeRegister activity1 : this.getTimeregisteredList()){</b>
+<b class="fc"><i>83</i>&nbsp;            total += activity1.getTime();</b>
+<b class="fc"><i>84</i>&nbsp;        }</b>
+<b class="fc"><i>85</i>&nbsp;        return total;</b>
+<i>86</i>&nbsp;    }
+<i>87</i>&nbsp;
+<i>88</i>&nbsp;    public String getInitials() {
+<b class="fc"><i>89</i>&nbsp;        return initials;</b>
+<i>90</i>&nbsp;    }
+<i>91</i>&nbsp;
+<i>92</i>&nbsp;    public List&lt;TimeRegister&gt; getTimeregisteredList() {
+<b class="fc"><i>93</i>&nbsp;        return timeregistered;</b>
+<i>94</i>&nbsp;    }
+<i>95</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-05-05 18:25</div>
+</div>
+</body>
+</html>

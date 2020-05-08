@@ -1,0 +1,226 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: LoginScreen</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">gui</a> ]
+</div>
+
+<h1>Coverage Summary for Class: LoginScreen (gui)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LoginScreen</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 37)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">LoginScreen$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 8)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">LoginScreen$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 7)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 52)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package gui;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import Project.Employee;
+<i>4</i>&nbsp;import Project.Program;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;import java.awt.*;
+<i>7</i>&nbsp;import javax.swing.*;
+<i>8</i>&nbsp;import java.awt.event.ActionEvent;
+<i>9</i>&nbsp;import java.awt.event.ActionListener;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;public class LoginScreen {
+<i>12</i>&nbsp;    private JFrame jframe;
+<i>13</i>&nbsp;    private JPanel contentCenter;
+<i>14</i>&nbsp;    private JPanel contentsouth;
+<i>15</i>&nbsp;    private JPanel contentNorth;
+<i>16</i>&nbsp;    private static Program program;
+<i>17</i>&nbsp;    private Employee employee;
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;    public static void main(String[] args) {
+<b class="nc"><i>20</i>&nbsp;       program = new Program();</b>
+<b class="nc"><i>21</i>&nbsp;       LoginScreen loginScreen =  new LoginScreen(program);</b>
+<i>22</i>&nbsp;    }
+<i>23</i>&nbsp;
+<b class="nc"><i>24</i>&nbsp;    public LoginScreen(Program program) {</b>
+<b class="nc"><i>25</i>&nbsp;        intialize();</b>
+<b class="nc"><i>26</i>&nbsp;        LoginScreen.program = program;</b>
+<i>27</i>&nbsp;    }
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;    public void intialize() {
+<b class="nc"><i>30</i>&nbsp;        jframe = new JFrame();</b>
+<b class="nc"><i>31</i>&nbsp;        jframe.setTitle(&quot;Login Screen&quot;);</b>
+<b class="nc"><i>32</i>&nbsp;        jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</b>
+<b class="nc"><i>33</i>&nbsp;        JPanel content = new JPanel();</b>
+<b class="nc"><i>34</i>&nbsp;        content.setLayout(new BoxLayout(content,BoxLayout.Y_AXIS));</b>
+<i>35</i>&nbsp;
+<b class="nc"><i>36</i>&nbsp;        contentNorth = new JPanel();</b>
+<b class="nc"><i>37</i>&nbsp;        contentNorth.setLayout(new GridLayout(2,0,10,30));</b>
+<i>38</i>&nbsp;
+<b class="nc"><i>39</i>&nbsp;        contentCenter = new JPanel();</b>
+<b class="nc"><i>40</i>&nbsp;        contentCenter.setLayout(new GridLayout(3,0,10,4));</b>
+<b class="nc"><i>41</i>&nbsp;        contentCenter.setMaximumSize(new Dimension(150,50));</b>
+<i>42</i>&nbsp;
+<b class="nc"><i>43</i>&nbsp;        JTextField id = new JTextField();</b>
+<b class="nc"><i>44</i>&nbsp;        JButton login = new JButton(&quot;Login&quot;);</b>
+<i>45</i>&nbsp;
+<b class="nc"><i>46</i>&nbsp;        contentCenter.add(id);</b>
+<b class="nc"><i>47</i>&nbsp;        contentCenter.add(login);</b>
+<i>48</i>&nbsp;
+<i>49</i>&nbsp;
+<b class="nc"><i>50</i>&nbsp;        login.addActionListener(new ActionListener() {</b>
+<i>51</i>&nbsp;            public void actionPerformed(ActionEvent e) {
+<b class="nc"><i>52</i>&nbsp;                String EmployeeID = id.getText();</b>
+<b class="nc"><i>53</i>&nbsp;                if(program.getEmployee(EmployeeID) != null) {</b>
+<b class="nc"><i>54</i>&nbsp;                    employee = program.getEmployee(EmployeeID);</b>
+<b class="nc"><i>55</i>&nbsp;                    MainScreen mainscreen = new MainScreen(program, employee);</b>
+<b class="nc"><i>56</i>&nbsp;                    jframe.setVisible(false);</b>
+<b class="nc"><i>57</i>&nbsp;                }</b>
+<i>58</i>&nbsp;                else {
+<b class="nc"><i>59</i>&nbsp;                    login.setText(&quot;Wrong employee&quot;);</b>
+<i>60</i>&nbsp;                }
+<i>61</i>&nbsp;            }
+<i>62</i>&nbsp;        });
+<i>63</i>&nbsp;
+<b class="nc"><i>64</i>&nbsp;        contentsouth = new JPanel();</b>
+<b class="nc"><i>65</i>&nbsp;        contentsouth.setLayout(new GridLayout(3,0,10,4));</b>
+<b class="nc"><i>66</i>&nbsp;        contentsouth.setMaximumSize(new Dimension(150,50));</b>
+<i>67</i>&nbsp;
+<b class="nc"><i>68</i>&nbsp;        TextField initials = new TextField();</b>
+<b class="nc"><i>69</i>&nbsp;        initials.setPreferredSize(new Dimension(100,40));</b>
+<b class="nc"><i>70</i>&nbsp;        JButton btnemployee = new JButton(&quot;Create Employee&quot;);</b>
+<b class="nc"><i>71</i>&nbsp;        btnemployee.addActionListener(new ActionListener() {</b>
+<i>72</i>&nbsp;            public void actionPerformed(ActionEvent e) {
+<b class="nc"><i>73</i>&nbsp;                String EmployeeID = initials.getText();</b>
+<b class="nc"><i>74</i>&nbsp;                if(EmployeeID.length() == 4){</b>
+<b class="nc"><i>75</i>&nbsp;                    employee = new Employee(EmployeeID);</b>
+<b class="nc"><i>76</i>&nbsp;                    program.addEmployee(employee);</b>
+<b class="nc"><i>77</i>&nbsp;                    initials.setText(&quot;&quot;);</b>
+<i>78</i>&nbsp;                }
+<i>79</i>&nbsp;                else {
+<b class="nc"><i>80</i>&nbsp;                    btnemployee.setText(&quot;Must be 4 letters&quot;);</b>
+<i>81</i>&nbsp;                }
+<i>82</i>&nbsp;        }
+<i>83</i>&nbsp;        });
+<i>84</i>&nbsp;
+<b class="nc"><i>85</i>&nbsp;        contentsouth.add(initials,0);</b>
+<b class="nc"><i>86</i>&nbsp;        contentsouth.add(btnemployee,1);</b>
+<i>87</i>&nbsp;
+<b class="nc"><i>88</i>&nbsp;        content.add(contentNorth);</b>
+<b class="nc"><i>89</i>&nbsp;        content.add(contentCenter);</b>
+<b class="nc"><i>90</i>&nbsp;        content.add(contentsouth);</b>
+<b class="nc"><i>91</i>&nbsp;        jframe.setContentPane(content);</b>
+<i>92</i>&nbsp;
+<b class="nc"><i>93</i>&nbsp;        jframe.setSize(300,250);</b>
+<b class="nc"><i>94</i>&nbsp;        jframe.setResizable(false);</b>
+<b class="nc"><i>95</i>&nbsp;        jframe.setLocationRelativeTo(null);</b>
+<b class="nc"><i>96</i>&nbsp;        jframe.setVisible(true);</b>
+<i>97</i>&nbsp;    }
+<i>98</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-05-05 18:32</div>
+</div>
+</body>
+</html>

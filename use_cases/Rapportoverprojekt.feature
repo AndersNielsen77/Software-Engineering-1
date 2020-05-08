@@ -9,8 +9,8 @@ Feature: Report on project
     Given an employee with initials "FFGK"
     When the employee with initials "ABCD" is chosen as Project leader for project "Fisk"
     When the project "Fisk" with year 2020 is created
-    And that project leader creates an activity for project "Fisk" with time 10.5, startweek 19, endweek 21 and name "status"
-    And that project leader creates an activity for project "Fisk" with time 10.5, startweek 19, endweek 21 and name "ProjektStart"
+    And that project leader with initials "ABCD" creates an activity for project "Fisk" with time 10.5, startweek 19, endweek 21 and name "status"
+    And that project leader with initials "ABCD" creates an activity for project "Fisk" with time 10.5, startweek 19, endweek 21 and name "ProjektStart"
     And an employee with initials "ADAG" is attached to the activity with name "Status" on project "Fisk"
     When the employee with initials "ADAG" records timespent 5.5 on an activity with name "Status" in project "Fisk"
     And an employee with initials "FFGK" is attached to the activity with name "ProjektStart" on project "Fisk"

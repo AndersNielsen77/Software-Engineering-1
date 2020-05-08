@@ -15,7 +15,6 @@ public class UnavailableActivity {
         return startWeek;
     }
 
-
     public int getEndDate() {
         return endWeek;
     }

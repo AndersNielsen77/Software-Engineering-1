@@ -8,7 +8,7 @@ Feature: Records hours
     And an employee with initials "ADAG"
     When the employee with initials "ABCD" is chosen as Project leader for project "Fisk"
     When the project "Fisk" with year 2020 is created
-    And that project leader creates an activity for project "Fisk" with time 10.5, startweek 19, endweek 21 and name "Projekt"
+    And that project leader with initials "ABCD" creates an activity for project "Fisk" with time 10.5, startweek 19, endweek 21 and name "Projekt"
     Then the project with year 2020, name "Fisk", number 1 is created
 
   # Main scenario

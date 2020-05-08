@@ -1,0 +1,130 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: AddEmployeeTest</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">test.Project</a> ]
+</div>
+
+<h1>Coverage Summary for Class: AddEmployeeTest (test.Project)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AddEmployeeTest</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (16/ 16)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package test.Project; 
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import Project.Activity;
+<i>4</i>&nbsp;import Project.Employee;
+<i>5</i>&nbsp;import org.junit.Test;
+<i>6</i>&nbsp;import org.junit.Before; 
+<i>7</i>&nbsp;import org.junit.After;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;import static org.junit.Assert.*;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;/**
+<i>12</i>&nbsp;* Activity Tester. 
+<i>13</i>&nbsp;* 
+<i>14</i>&nbsp;* @author &lt;Authors name&gt; 
+<i>15</i>&nbsp;* @since &lt;pre&gt;maj 5, 2020&lt;/pre&gt; 
+<i>16</i>&nbsp;* @version 1.0 
+<i>17</i>&nbsp;*/ 
+<b class="fc"><i>18</i>&nbsp;public class AddEmployeeTest {</b>
+<i>19</i>&nbsp;    /**
+<i>20</i>&nbsp;* 
+<i>21</i>&nbsp;* Method: addEmployee(Employee employee) 
+<i>22</i>&nbsp;* 
+<i>23</i>&nbsp;*/ 
+<i>24</i>&nbsp;    @Test
+<i>25</i>&nbsp;    public void testAddEmployeeA() throws Exception {
+<b class="fc"><i>26</i>&nbsp;        Employee employee = new Employee(&quot;GGGG&quot;);</b>
+<b class="fc"><i>27</i>&nbsp;        Activity activity = new Activity(10, 5,10,&quot;is&quot;);</b>
+<b class="fc"><i>28</i>&nbsp;        activity.addEmployee(employee);</b>
+<b class="fc"><i>29</i>&nbsp;        assertEquals(employee,activity.getEmployee(&quot;GGGG&quot;));</b>
+<b class="fc"><i>30</i>&nbsp;    }</b>
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    @Test
+<i>33</i>&nbsp;    public void testAddEmployeeB() throws Exception {
+<b class="fc"><i>34</i>&nbsp;        Employee employee = new Employee(&quot;GGGG&quot;);</b>
+<b class="fc"><i>35</i>&nbsp;        Activity activity = new Activity(10, 5,10,&quot;is&quot;);</b>
+<b class="fc"><i>36</i>&nbsp;        employee.createUnavailablety(&quot;Ferie&quot;,6,7);</b>
+<b class="fc"><i>37</i>&nbsp;        assertNull(activity.getEmployee(&quot;GGGG&quot;));</b>
+<b class="fc"><i>38</i>&nbsp;    }</b>
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;    @Test
+<i>41</i>&nbsp;    public void testAddEmployeeC() throws Exception {
+<b class="fc"><i>42</i>&nbsp;        Employee employee = new Employee(&quot;GGGG&quot;);</b>
+<b class="fc"><i>43</i>&nbsp;        Activity activity = new Activity(10, 5,10,&quot;is&quot;);</b>
+<b class="fc"><i>44</i>&nbsp;        employee.createUnavailablety(&quot;Ferie&quot;,6,7);</b>
+<b class="fc"><i>45</i>&nbsp;        assertNull(activity.getEmployee(&quot;GGGG&quot;));</b>
+<b class="fc"><i>46</i>&nbsp;    }</b>
+<i>47</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-05-05 18:25</div>
+</div>
+</body>
+</html>

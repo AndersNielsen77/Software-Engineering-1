@@ -21,21 +21,24 @@ public class Project {
         return projectLeader;
     }
 
-    public void setProjectLeader(Employee employee) throws Exception {
-        if (this.projectLeader == null){
-            projectLeader = new ProjectLeader(employee,number);
+    public void addProjectLeader(Employee employee) throws Exception {
+            assert employee != null;
+        if (this.projectLeader == null){ // 1
+            projectLeader = new ProjectLeader(employee);
             employee.setProjectLeader(projectLeader);
+            assert employee.getIsProjectLeader(): "Post condition";
         }else{
             throw new Exception("There is already an existing project leader");
         }
     }
 
-    public void createActivity(Employee employee, double time, int startDate, int endDate, String name) throws Exception {
-        if (employee == projectLeader.getProjectLeader()){
-            Activity activity = new Activity(time,startDate,endDate,name);
+    public void createActivity(Employee employee, double time, int startWeek, int endWeek, String name) throws Exception {
+        assert startWeek > 0 && startWeek <= 53  && endWeek > 0 && endWeek <= 53 && employee != null: "Precondition";
+        if (employee.getIsProjectLeader() && employee == this.projectLeader.getProjectLeader()){ // 1
+            Activity activity = new Activity(time,startWeek,endWeek,name);
             activityList.add(activity);
-        }
-        else {
+            assert getActivity(name).getName().equals(name): "Post condition";
+        }else {
             throw new Exception("You are not the project leader");
         }
     }

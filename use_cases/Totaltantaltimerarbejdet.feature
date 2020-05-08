@@ -8,8 +8,8 @@ Feature: Total hours worked
     And an employee with initials "ADAG"
     When the employee with initials "ABCD" is chosen as Project leader for project "Fisk"
     When the project "Fisk" with year 2020 is created
-    And that project leader creates an activity for project "Fisk" with time 10.5, startweek 19, endweek 21 and name "Projekt"
-    And that project leader creates an activity for project "Fisk" with time 10.5, startweek 19, endweek 21 and name "Projekt2"
+    And that project leader with initials "ABCD" creates an activity for project "Fisk" with time 10.5, startweek 19, endweek 21 and name "Projekt"
+    And that project leader with initials "ABCD" creates an activity for project "Fisk" with time 10.5, startweek 19, endweek 21 and name "Projekt2"
     Given an employee with initials "ADAG" is attached to the activity with name "Projekt" on project "Fisk"
     Given an employee with initials "ADAG" is attached to the activity with name "Projekt2" on project "Fisk"
 

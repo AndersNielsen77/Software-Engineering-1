@@ -9,10 +9,6 @@ public class Program {
     private List<Employee> employeeList = new ArrayList<>();
     int runingNumber = 0;
 
-    public Program() {
-
-    }
-
     public void addProject(int year, String name) {
         runingNumber +=1;
         Project project = new Project(year,name,runingNumber);
@@ -29,18 +25,6 @@ public class Program {
 
     public void addEmployee(Employee employee) {
         employeeList.add(employee);
-    }
-
-    public Employee getEmployee(Employee employee) {
-        if(employee == null) {
-            return employeeList.get(0);
-        }
-        for (Employee employee1 : employeeList){
-            if (employee1.equals(employee)){
-                return employee;
-            }
-        }
-        return null;
     }
 
     public Employee getEmployee(String initials) {
@@ -61,7 +45,6 @@ public class Program {
             if (project1.getName().equals(name)) {
                 return project1;
             }
-        }
-        return null;
+        }return null;
     }
 }

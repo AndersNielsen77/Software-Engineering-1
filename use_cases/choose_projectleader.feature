@@ -5,15 +5,14 @@ Feature: Choose project leader
 
   Background: A set of projects
     Given a project with year 2020, name "Fisk"
-    When the project "Fisk" with year 2020 is created
     Then the project with year 2020, name "Fisk", number 1 is created
+    And an employee with initials "ABCD"
 
 
 
   # Main scenario
   Scenario: Choose project leader
     Given there is a project "Fisk" without a project leader
-    And an employee with initials "ABCD"
     When the employee with initials "ABCD" is chosen as Project leader for project "Fisk"
     Then the employee is Project leader
 

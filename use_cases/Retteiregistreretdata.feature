@@ -7,7 +7,7 @@ Feature: Correct recorded data
     And an employee with initials "ABCD"
     When the employee with initials "ABCD" is chosen as Project leader for project "Fisk"
     When the project "Fisk" with year 2020 is created
-    And that project leader creates an activity for project "Fisk" with time 10.5, startweek 19, endweek 21 and name "Projekt"
+    And that project leader with initials "ABCD" creates an activity for project "Fisk" with time 10.5, startweek 19, endweek 21 and name "Projekt"
     Given an employee with initials "ADAG"
     And an employee with initials "ADAG" is attached to the activity with name "Projekt" on project "Fisk"
     When the employee with initials "ADAG" records timespent 5.5 on an activity with name "Projekt" in project "Fisk"

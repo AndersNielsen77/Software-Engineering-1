@@ -8,7 +8,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="146" />
+    <option name="myElementSize" value="160" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\Main\floobits\share\MikDtu\Projekt\out" />
   </component>
   <component name="ProjectId" id="1bRetlbiHaT1zKY0fwd5xbSqQ1P" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -22,12 +25,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/out" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.22572179" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Cucumber java.All Features in: Projekt">
+  <component name="RunManager" selected="Application.LoginScreen">
     <configuration name="LoginScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gui.LoginScreen" />
       <module name="Projekt" />
@@ -77,9 +81,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber java.All Features in: Projekt" />
-        <item itemvalue="JUnit.All in Projekt" />
         <item itemvalue="Application.LoginScreen" />
+        <item itemvalue="JUnit.All in Projekt" />
+        <item itemvalue="Cucumber java.All Features in: Projekt" />
         <item itemvalue="JUnit.All in Projekt (1)" />
       </list>
     </recent_temporary>
@@ -96,7 +100,14 @@
       <updated>1588599549614</updated>
       <workItem from="1588599551057" duration="31000" />
       <workItem from="1588599598583" duration="7638000" />
-      <workItem from="1588624148789" duration="2412000" />
+      <workItem from="1588624148789" duration="2751000" />
+      <workItem from="1588669990799" duration="2251000" />
+      <workItem from="1588678794407" duration="2157000" />
+      <workItem from="1588688289348" duration="947000" />
+      <workItem from="1588691412778" duration="1654000" />
+      <workItem from="1588693084126" duration="3556000" />
+      <workItem from="1588707598251" duration="830000" />
+      <workItem from="1588944177258" duration="2002000" />
     </task>
     <servers />
   </component>
@@ -104,34 +115,42 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1921" height="272" key="GridCell.Tab.0.bottom" timestamp="1588627352339">
+    <state x="1134" y="271" key="FileChooserDialogImpl" timestamp="1588695946740">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1921" height="272" key="GridCell.Tab.0.bottom/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588627352339" />
-    <state width="1921" height="272" key="GridCell.Tab.0.center" timestamp="1588627352339">
+    <state x="1134" y="271" key="FileChooserDialogImpl/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588695946740" />
+    <state width="1921" height="269" key="GridCell.Tab.0.bottom" timestamp="1588696120703">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1921" height="272" key="GridCell.Tab.0.center/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588627352339" />
-    <state width="1921" height="272" key="GridCell.Tab.0.left" timestamp="1588627352339">
+    <state width="1921" height="272" key="GridCell.Tab.0.bottom/-1920.-6.1920.1050/0.0.1920.1050@-1920.-6.1920.1050" timestamp="1588674883694" />
+    <state width="1921" height="269" key="GridCell.Tab.0.bottom/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588696120703" />
+    <state width="1921" height="269" key="GridCell.Tab.0.center" timestamp="1588696120703">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1921" height="272" key="GridCell.Tab.0.left/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588627352339" />
-    <state width="1921" height="272" key="GridCell.Tab.0.right" timestamp="1588627352339">
+    <state width="1921" height="272" key="GridCell.Tab.0.center/-1920.-6.1920.1050/0.0.1920.1050@-1920.-6.1920.1050" timestamp="1588674883694" />
+    <state width="1921" height="269" key="GridCell.Tab.0.center/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588696120703" />
+    <state width="1921" height="269" key="GridCell.Tab.0.left" timestamp="1588696120703">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1921" height="272" key="GridCell.Tab.0.right/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588627352339" />
-    <state x="440" y="99" key="SettingsEditor" timestamp="1588599671125">
+    <state width="1921" height="272" key="GridCell.Tab.0.left/-1920.-6.1920.1050/0.0.1920.1050@-1920.-6.1920.1050" timestamp="1588674883694" />
+    <state width="1921" height="269" key="GridCell.Tab.0.left/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588696120703" />
+    <state width="1921" height="269" key="GridCell.Tab.0.right" timestamp="1588696120703">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="440" y="99" key="SettingsEditor/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588599671125" />
-    <state x="607" y="224" width="672" height="678" key="search.everywhere.popup" timestamp="1588624168150">
+    <state width="1921" height="272" key="GridCell.Tab.0.right/-1920.-6.1920.1050/0.0.1920.1050@-1920.-6.1920.1050" timestamp="1588674883694" />
+    <state width="1921" height="269" key="GridCell.Tab.0.right/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588696120703" />
+    <state x="440" y="99" key="SettingsEditor" timestamp="1588944541130">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="607" y="224" width="672" height="678" key="search.everywhere.popup/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588624168150" />
+    <state x="440" y="99" key="SettingsEditor/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588944541130" />
+    <state x="607" y="224" width="672" height="678" key="search.everywhere.popup" timestamp="1588944529450">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="607" y="224" width="672" height="678" key="search.everywhere.popup/-1920.-6.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588944529450" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Projekt$All_in_Projekt.ic" NAME="All in Projekt Coverage Results" MODIFIED="1588626031038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Projekt$All_Features_in__Projekt.ic" NAME="All Features in: Projekt Coverage Results" MODIFIED="1588627352270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Projekt$All_in_Projekt.ic" NAME="All in Projekt Coverage Results" MODIFIED="1588695871557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Projekt$All_Features_in__Projekt.ic" NAME="All Features in: Projekt Coverage Results" MODIFIED="1588674874875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>io.cucumber.core.cli.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Projekt$LoginScreen.ic" NAME="LoginScreen Coverage Results" MODIFIED="1588622714267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

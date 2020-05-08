@@ -20,9 +20,12 @@ public class Employee {
     }
 
     public boolean isAvailable(int startWeek, int endWeek){
+        assert startWeek > 0 && startWeek <= 53  && endWeek > 0 && endWeek <= 53: "Precondition";
         if (unavailableList.size() > 0) { // 1
             for (UnavailableActivity isAvailable1 : unavailableList) { // 2
-                if (isAvailable1.getStartDate() > endWeek || isAvailable1.getEndDate() < startWeek) { // 3
+                if ((isAvailable1.getStartDate() > endWeek || isAvailable1.getEndDate() < startWeek) && startWeek <= endWeek) {  // 3
+                    return true;
+                }else if ((isAvailable1.getStartDate() > endWeek && isAvailable1.getEndDate() < startWeek) && startWeek > endWeek){ //4
                     return true;
                 }
             }
@@ -71,8 +74,7 @@ public class Employee {
             if (activity1.getActivity().equals(activity)){
                 return activity1.getTime();
             }
-        }
-        return -1;
+        } return -1;
     }
 
     public double getTotalTime() {

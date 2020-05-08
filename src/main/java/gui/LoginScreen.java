@@ -1,3 +1,4 @@
+// Anders Nielsen s194299
 package gui;
 
 import Project.Employee;
@@ -10,8 +11,9 @@ import java.awt.event.ActionListener;
 
 public class LoginScreen {
     private JFrame jframe;
-    private JPanel contentcenter;
+    private JPanel contentCenter;
     private JPanel contentsouth;
+    private JPanel contentNorth;
     private static Program program;
     private Employee employee;
 
@@ -29,13 +31,23 @@ public class LoginScreen {
         jframe = new JFrame();
         jframe.setTitle("Login Screen");
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jframe.getContentPane().setLayout(new BorderLayout());
+        JPanel content = new JPanel();
+        content.setLayout(new BoxLayout(content,BoxLayout.Y_AXIS));
 
-        contentcenter = new JPanel();
-        contentcenter.setLayout(new GridLayout(2,0));
+        contentNorth = new JPanel();
+        contentNorth.setLayout(new GridLayout(2,0,10,30));
 
-        TextField id = new TextField();
+        contentCenter = new JPanel();
+        contentCenter.setLayout(new GridLayout(3,0,10,4));
+        contentCenter.setMaximumSize(new Dimension(150,50));
+
+        JTextField id = new JTextField();
         JButton login = new JButton("Login");
+
+        contentCenter.add(id);
+        contentCenter.add(login);
+
+
         login.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String EmployeeID = id.getText();
@@ -50,13 +62,12 @@ public class LoginScreen {
             }
         });
 
-        contentcenter.add(id);
-        contentcenter.add(login);
-
         contentsouth = new JPanel();
-        contentsouth.setLayout(new GridLayout(2,0));
+        contentsouth.setLayout(new GridLayout(3,0,10,4));
+        contentsouth.setMaximumSize(new Dimension(150,50));
 
         TextField initials = new TextField();
+        initials.setPreferredSize(new Dimension(100,40));
         JButton btnemployee = new JButton("Create Employee");
         btnemployee.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -72,12 +83,17 @@ public class LoginScreen {
         }
         });
 
-        contentsouth.add(btnemployee);
-        contentsouth.add(initials);
+        contentsouth.add(initials,0);
+        contentsouth.add(btnemployee,1);
 
-        jframe.getContentPane().add(contentcenter, BorderLayout.CENTER);
-        jframe.getContentPane().add(contentsouth, BorderLayout.SOUTH);
-        jframe.setSize(600, 600);
+        content.add(contentNorth);
+        content.add(contentCenter);
+        content.add(contentsouth);
+        jframe.setContentPane(content);
+
+        jframe.setSize(300,250);
+        jframe.setResizable(false);
+        jframe.setLocationRelativeTo(null);
         jframe.setVisible(true);
     }
 }

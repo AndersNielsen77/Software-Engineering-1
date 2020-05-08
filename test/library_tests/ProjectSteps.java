@@ -24,10 +24,6 @@ public class ProjectSteps {
         program.addProject(year, projectName);
     }
 
-    @When("the project {string} with year {int} is created")
-    public void the_project_is_created(String projectName, int year) {
-        program.addProject(year, projectName);
-    }
 
     @Then("the project with year {int}, name {string}, number {int} is created")
     public void theProjectWithYearNameNumberIsCreated(int year, String projectName, int number) {
@@ -50,7 +46,7 @@ public class ProjectSteps {
 
     @When("the employee with initials {string} is chosen as Project leader for project {string}")
     public void the_employee_is_chosen_as_Projectleader(String initials,String projectName) throws Exception {
-        program.getProject(projectName).setProjectLeader(program.getEmployee(initials));
+        program.getProject(projectName).addProjectLeader(program.getEmployee(initials));
     }
 
     @Then("the employee is Project leader")
@@ -61,16 +57,14 @@ public class ProjectSteps {
 
     @And("an employee with initials {string} who is chosen as project leader for project {string}")
     public void anEmployeeWithInitialsWhoIsChosennAsProjectLeader(String initials,String projectName) throws Exception {
-        employee = new Employee(initials);
-        program.addEmployee(employee);
-        program.getProject(projectName).setProjectLeader(program.getEmployee(employee));
+        program.getProject(projectName).addProjectLeader(program.getEmployee(initials));
     }
 
     @When("another employee with initials {string} is chosen as project leader for project {string}")
     public void anotherEmployeeWithInitialsIsChosenAsProjectLeaderForTheSameProject(String initials,String projectName) throws Exception {
         employee = new Employee(initials);
         try {
-            program.getProject(projectName).setProjectLeader(employee);
+            program.getProject(projectName).addProjectLeader(employee);
         } catch(Exception e) {
             errorMessage.setErrorMessage(e.getMessage());
         }

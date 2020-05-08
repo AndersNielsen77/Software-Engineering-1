@@ -1,3 +1,4 @@
+// Mads Ptak s194297
 package gui;
 
 import Project.Employee;
@@ -13,10 +14,11 @@ public class MainScreen{
     private Program program;
     private Employee employee;
     private JFrame mainjframe;
-    private JPanel contentcenter;
-    private JPanel contentsouth;
-    private JPanel contentwest;
-    private JPanel contenteast;
+    private JPanel contentCenter;
+    private JPanel contentWest2;
+    private JPanel contentWest;
+    private JPanel contentEast;
+    private JPanel contentEast2;
     public JButton btnCreateProject, bntlogout, btnSetProjectLeader, btnCreateActivity, btnCreateReport, btnAddTimeToActivity, btnEditActivity, btnCreateUnavaliableActivity, btnJoinActivity, btnTotalHoursWorked, btnGetInfo;
 
     public MainScreen(Program program, Employee employee) {
@@ -28,25 +30,31 @@ public class MainScreen{
     public void initialize() {
         //Mainscreen
         mainjframe = new JFrame();
-        mainjframe.setTitle("Main Screen");
+        mainjframe.setTitle("Main Screen: "+employee.getInitials());
         mainjframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainjframe.setSize(600, 600);
+        JPanel content = new JPanel();
+        content.setLayout(new BoxLayout(content,BoxLayout.X_AXIS));
 
-        mainjframe.getContentPane().setLayout(new BorderLayout());
-        contentcenter = new JPanel();
-        contentsouth = new JPanel();
-        contentwest = new JPanel();
-        contentwest.setLayout(new GridLayout(4,0));
-        contenteast = new JPanel();
-        contenteast.setLayout(new GridLayout(6,0));
+        contentCenter = new JPanel();
+        contentWest2 = new JPanel();
+        contentWest2.setLayout(new GridLayout(0,1,40,40));
+        contentEast2 = new JPanel();
+        contentEast2.setLayout(new GridLayout(0,1,40,40));
+        contentWest = new JPanel();
+        contentWest.setLayout(new GridLayout(5,0,10,40));
+        contentWest.setMaximumSize(new Dimension(100,390));
+        contentEast = new JPanel();
+        contentEast.setLayout(new GridLayout(5,0,10,40));
+        contentEast.setMaximumSize(new Dimension(100,390));
+
 
         //Console - CENTER
-        JTextArea infoOutput = new JTextArea(60, 20);
+        JTextArea infoOutput = new JTextArea(60, 40);
         JScrollPane scrollPane = new JScrollPane(infoOutput);
         infoOutput.setEditable(false);
         infoOutput.setLineWrap(true);
-        contentcenter.add(infoOutput);
-        mainjframe.getContentPane().add(contentcenter, BorderLayout.CENTER);
+        contentCenter.add(infoOutput);
+        mainjframe.getContentPane().add(contentCenter, BorderLayout.CENTER);
 
         //PL panel - WEST
         //contentwest.setLayout(new BoxLayout(contentwest, BoxLayout.Y_AXIS));
@@ -91,12 +99,12 @@ public class MainScreen{
             }
         });
 
-        contentwest.add(btnCreateProject);
-        contentwest.add(btnSetProjectLeader);
-        contentwest.add(btnCreateActivity);
-        contentwest.add(btnCreateReport);
+        contentWest.add(btnCreateProject);
+        contentWest.add(btnSetProjectLeader);
+        contentWest.add(btnCreateActivity);
+        contentWest.add(btnCreateReport);
 
-        mainjframe.getContentPane().add(contentwest, BorderLayout.WEST);
+        mainjframe.getContentPane().add(contentWest, BorderLayout.WEST);
 
         //LogoutSOUTH
         bntlogout = new JButton("Logout");
@@ -106,9 +114,9 @@ public class MainScreen{
                 LoginScreen loginScreen = new LoginScreen(program);
             }
         });
-        contentsouth.add(bntlogout);
+        contentWest.add(bntlogout);
 
-        mainjframe.getContentPane().add(contentsouth, BorderLayout.SOUTH);
+        mainjframe.getContentPane().add(contentCenter, BorderLayout.SOUTH);
         //Employee Panel - EAST
         //contenteast.setLayout(new BoxLayout(contenteast, BoxLayout.Y_AXIS));
 
@@ -151,29 +159,41 @@ public class MainScreen{
                 contentcenter.add(reportArea);
                 reportFrame.setSize(600, 600);
                 reportFrame.getContentPane().add(contentcenter, BorderLayout.CENTER);
+                reportFrame.setLocationRelativeTo(null);
                 reportFrame.setVisible(true);
 
-                reportArea.append("Employee: "+program.getEmployee(employee).getInitials()+"\n");
+                reportArea.append("Employee: "+program.getEmployee(employee.getInitials()).getInitials()+"\n");
                 reportArea.append("hours on Activities;"+"\n");
-                for (TimeRegister timer : program.getEmployee(employee).getTimeregisteredList()){
+                for (TimeRegister timer : program.getEmployee(employee.getInitials()).getTimeregisteredList()){
                     reportArea.append(timer.getActivity().getName()+": "+timer.getTime()+"Hours"+"\n");
                 }
-                reportArea.append("Total time worked: "+program.getEmployee(employee).getTotalTime()+"Hours");
+                reportArea.append("Total time worked: "+program.getEmployee(employee.getInitials()).getTotalTime()+"Hours");
 
             }
         });
 
-        contenteast.add(btnAddTimeToActivity);
-        contenteast.add(btnEditActivity);
-        contenteast.add(btnCreateUnavaliableActivity);
-        contenteast.add(btnJoinActivity);
-        contenteast.add(btnGetInfo);
+        contentEast.add(btnAddTimeToActivity);
+        contentEast.add(btnEditActivity);
+        contentEast.add(btnCreateUnavaliableActivity);
+        contentEast.add(btnJoinActivity);
+        contentEast.add(btnGetInfo);
 
-        if(!program.getEmployee(employee).getIsProjectLeader()) {
+        if(!program.getEmployee(employee.getInitials()).getIsProjectLeader()) {
             btnCreateReport.setEnabled(false);
             btnCreateActivity.setEnabled(false);
         }
-        mainjframe.getContentPane().add(contenteast, BorderLayout.EAST);
+        //mainjframe.getContentPane().add(contenteast, BorderLayout.EAST);
+
+        content.add(contentWest2);
+        content.add(contentWest);
+        content.add(contentCenter);
+        content.add(contentEast);
+        content.add(contentEast2);
+        mainjframe.setContentPane(content);
+
+        mainjframe.setSize(800,440);
+        mainjframe.setResizable(false);
+        mainjframe.setLocationRelativeTo(null);
         mainjframe.setVisible(true);
     }
 }

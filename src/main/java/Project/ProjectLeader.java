@@ -1,13 +1,11 @@
 package Project;
 
 public class ProjectLeader {
-    private Project project;
-    private int projectNumber;
     private Employee employee;
 
-    public ProjectLeader(Employee employee, int projectNumber) {
+
+    public ProjectLeader(Employee employee) {
         this.employee = employee;
-        this.projectNumber = projectNumber;
     }
 
     public Employee getProjectLeader(){

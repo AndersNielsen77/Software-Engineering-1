@@ -90,9 +90,7 @@ public class Popup extends JFrame {
                                 infoOutput.append("" + ex + "\n");
                             }
                             dispose();
-                        } else {
-                            ok.setText("Wrong input");
-                        }
+                        } else { ok.setText("Wrong input"); }
                     }
                 });
                 break;
@@ -108,7 +106,7 @@ public class Popup extends JFrame {
                                 int startDate = Integer.parseInt(info[3]);
                                 int endDate = Integer.parseInt(info[4]);
                                 if (startDate > 0 && startDate < 54 && endDate > 0 && endDate < 54) {
-                                    if (program.getProject(info[1]) != null && program.getProject(info[1]).getActivity(info[5]) != null ) {
+                                    if (program.getProject(info[1]) != null) {
                                         try {
                                             program.getProject(info[1]).createActivity(program.getEmployee(employee.getInitials()), time, startDate, endDate, info[5]);
                                             program.getProject(info[1]).getActivity(info[5]).addEmployee(program.getEmployee(info[0]));
@@ -118,15 +116,9 @@ public class Popup extends JFrame {
                                             infoOutput.append("" + ex + "\n");
                                         }
                                         dispose();
-                                    } else {
-                                        ok.setText("Project does not exist");
-                                    }
-                                } else {
-                                    ok.setText("Error in Weeks");
-                                }
-                            } else {
-                                ok.setText("Error in Weeks");
-                            }
+                                    } else { ok.setText("Project does not exist"); }
+                                } else { ok.setText("Error in Weeks"); }
+                            } else { ok.setText("Error in Weeks"); }
                         }else {ok.setText("Error in Time");}
                     }
                 });
@@ -186,7 +178,7 @@ public class Popup extends JFrame {
                             Double time = Double.parseDouble(info[2]);
                             if (program.getProject(info[0]) != null && info[0].length() > 0 && info[1].length() > 0) {
                                 program.getEmployee(employee.getInitials()).editTimeOnActivity(program.getProject(info[0]).getActivity(info[1]), time);
-                                infoOutput.append("Time spent on the activity"+info[1]+"in project"+info[0]+"has been edited"+"\n");
+                                infoOutput.append("Time spent on the activity "+info[1]+" in project "+info[0]+" has been edited"+"\n");
                                 dispose();
                             } else {ok.setText("Project does not exist");}
                         }else{ok.setText("Error in Time");}
@@ -203,7 +195,7 @@ public class Popup extends JFrame {
                             int startweek = Integer.parseInt(info[1]);
                             int endweek = Integer.parseInt(info[2]);
                             program.getEmployee(employee.getInitials()).createUnavailablety(info[0], startweek, endweek);
-                            infoOutput.append(info[0]+"from"+info[1]+"to"+info[2]+"is now registered."+"\n");
+                            infoOutput.append(info[0]+" from "+info[1]+" to "+info[2]+" is now registered."+"\n");
                             dispose();
                         }else {ok.setText("Error in Weeks");}
                     }
@@ -218,7 +210,7 @@ public class Popup extends JFrame {
                         if (program.getProject(info[1]) != null && program.getProject(info[1]).getActivity(info[2]) != null && info[1].length() > 0 && info[2].length() > 0) {
                             try {
                                 program.getProject(info[1]).getActivity(info[2]).addEmployee(program.getEmployee(info[0]));
-                                infoOutput.append(info[0]+" has joined "+info[2]+" in" +info[1]+".\n");
+                                infoOutput.append(info[0]+" has joined "+info[2]+" in " +info[1]+".\n");
                             } catch (Exception ex) {
                                 infoOutput.append("" + ex + "\n");
                             }

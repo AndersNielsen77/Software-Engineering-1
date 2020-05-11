@@ -1,19 +1,21 @@
-Feature: Records hours
-  Description: An employee records a number of hours spent on a given activity.actor: Employee
-  Actor: Employee
+Feature: Report on project
+  Description: The project manager assigns an employee to an activity
+  Actor: Project manager
 
-  Background: A set of projects
+  Background:
     Given a project with year 2020, name "Fisk"
     And an employee with initials "ABCD"
-    And an employee with initials "ADAG"
+    Given an employee with initials "ADAG"
+    Given an employee with initials "FFGK"
     When the employee with initials "ABCD" is chosen as Project leader for project "Fisk"
-    And that project leader with initials "ABCD" creates an activity for project "Fisk" with time 10.5, startweek 19, endweek 21 and name "Projekt"
-    Then the project with year 2020, name "Fisk", number 1 is created
+    And that project leader with initials "ABCD" creates an activity for project "Fisk" with time 10.5, startweek 19, endweek 21 and name "status"
+    And that project leader with initials "ABCD" creates an activity for project "Fisk" with time 10.5, startweek 19, endweek 21 and name "ProjektStart"
+    And an employee with initials "ADAG" is attached to the activity with name "Status" on project "Fisk"
+    When the employee with initials "ADAG" records timespent 5.5 on an activity with name "Status" in project "Fisk"
+    And an employee with initials "FFGK" is attached to the activity with name "ProjektStart" on project "Fisk"
+    When the employee with initials "FFGK" records timespent 8.5 on an activity with name "ProjektStart" in project "Fisk"
 
   # Main scenario
-  Scenario: Employee records hours
-    Given an employee with initials "ADAG"
-    And an employee with initials "ADAG" is attached to the activity with name "Projekt" on project "Fisk"
-    When the employee with initials "ADAG" records timespent 5.5 on an activity with name "Projekt" in project "Fisk"
-    Then the timespent 5.5 for employee with initials "ADAG" is noted on the activity with name "Projekt" in project "Fisk"
-
+  Scenario: The project manager draws a time report on the project
+    Given a project leader that pulls a report on project "Fisk"
+    Then that report on project "Fisk" is pulled and reportcreated is updated to message "Report have been created"
